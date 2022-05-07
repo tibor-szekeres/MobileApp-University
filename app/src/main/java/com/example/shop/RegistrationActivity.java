@@ -2,6 +2,7 @@ package com.example.shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 public class RegistrationActivity extends AppCompatActivity {
     private static final String LOG_TAG = RegistrationActivity.class.getName();
     private static final String PREF_KEY = RegistrationActivity.class.getPackage().toString();
+    private static final int SECRET_KEY = 99;
 
     EditText userNameET;
     EditText userEmailET;
@@ -58,10 +60,17 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         Log.i(LOG_TAG, "Regisztrált:" + userName + ", email: " + email);
+        startSurvey();
     }
 
     public void cancel(View view) {
         finish();
+    }
+
+    private void startSurvey() {
+        Intent intent = new Intent(this, SurveyActivity.class);
+        intent.putExtra("SECRET_KEY", SECRET_KEY);
+        startActivity(intent);
     }
 
     @Override
