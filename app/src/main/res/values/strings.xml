@@ -3,4 +3,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="registration">Registration</string>
+    <string name="email_address">Email address</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
