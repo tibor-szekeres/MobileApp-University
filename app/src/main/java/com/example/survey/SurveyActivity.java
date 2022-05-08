@@ -14,6 +14,8 @@ public class SurveyActivity extends AppCompatActivity {
     private final static String LOG_TAG = SurveyActivity.class.getName();
     private FirebaseUser user;
 
+    private NotificationHandler notificationHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +28,12 @@ public class SurveyActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "Not created user");
             finish();
         }
+        notificationHandler = new NotificationHandler(this);
     }
 
     public void finish_survey(View view) {
         Intent intent  = new Intent(this, ExitActivity.class);
         startActivity(intent);
+        notificationHandler.cancel();
     }
 }

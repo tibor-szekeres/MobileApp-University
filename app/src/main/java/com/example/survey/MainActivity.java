@@ -1,10 +1,16 @@
 package com.example.survey;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
 
+    private NotificationHandler notificationHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         Log.i(LOG_TAG, "onCreate");
+
+        notificationHandler = new NotificationHandler(this);
     }
 
     public void login(View view) {
@@ -52,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Log.d(LOG_TAG, "User logged in!");
+                    notificationHandler.send("User was logged in!");
                     startSurvey();
                 } else {
                     Log.d(LOG_TAG, "User login failed!");
@@ -70,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SurveyActivity.class);
         startActivity(intent);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
