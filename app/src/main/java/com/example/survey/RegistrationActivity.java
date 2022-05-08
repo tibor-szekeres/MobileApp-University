@@ -1,5 +1,6 @@
 package com.example.survey;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationActivity extends AppCompatActivity {
     private static final String LOG_TAG = RegistrationActivity.class.getName();
@@ -20,6 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText passwordAgainET;
 
     private SharedPreferences preferences;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,8 @@ public class RegistrationActivity extends AppCompatActivity {
         passwordET.setText(password);
         passwordAgainET.setText(password);
 
+        mAuth = FirebaseAuth.getInstance();
+
         Log.i(LOG_TAG, "onCreate");
     }
 
@@ -60,7 +70,21 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         Log.i(LOG_TAG, "Regisztrált:" + userName + ", email: " + email);
-        startSurvey();
+        //startSurvey();
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Log.d(LOG_TAG, "User created successfully!");
+                    startSurvey();
+                } else {
+                    Log.d(LOG_TAG, "User was not created successfully!");
+                    Toast.makeText(RegistrationActivity.this, "User was not created successfully: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
     public void cancel(View view) {

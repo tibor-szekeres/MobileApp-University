@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shop">
         <activity
-            android:name="com.example.survey.SurveyActivity"
+            android:name=".ExitActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.survey.RegistrationActivity"
+            android:name=".SurveyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

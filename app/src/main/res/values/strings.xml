@@ -9,4 +9,6 @@
     <string name="cancel">Cancel</string>
     <string name="next_question">Next question</string>
     <string name="finish_survey">Finish survey</string>
+    <string name="thank_you_for_participating_in_our_survey">Thank you for participating in our Survey.</string>
+    <string name="exit_app">Exit App</string>
 </resources>
