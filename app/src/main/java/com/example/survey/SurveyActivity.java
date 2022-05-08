@@ -1,4 +1,4 @@
-package com.example.shop;
+package com.example.survey;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,6 @@ public class SurveyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_survey);
     }
 
-    public void next(View view) {
+    public void finish_survey(View view) {
     }
 }

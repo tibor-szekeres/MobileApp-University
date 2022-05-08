@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "269996638956",
+    "project_id": "survey-c5cb0",
+    "storage_bucket": "survey-c5cb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269996638956:android:bb18d162bc9139250edbc9",
+        "android_client_info": {
+          "package_name": "com.example.survey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269996638956-q3bq63r08n0sc1ij8pmjpup5ebt5hsr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.survey",
+            "certificate_hash": "aa5ce637fe2f9bc530624d453e9ab9e4cd0082e0"
+          }
+        },
+        {
+          "client_id": "269996638956-6dj4dbqeao5735m3j0el3u4jvjjv7kvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP-cWyikC8ypE9Kc7753ADVzojkCOY_Q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269996638956-6dj4dbqeao5735m3j0el3u4jvjjv7kvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

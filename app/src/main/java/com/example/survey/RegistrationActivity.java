@@ -1,4 +1,4 @@
-package com.example.shop;
+package com.example.survey;
 
 import androidx.appcompat.app.AppCompatActivity;
 

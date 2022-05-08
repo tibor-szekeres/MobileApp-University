@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.shop">
+    package="com.example.survey">
 
     <application
         android:allowBackup="true"
@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shop">
         <activity
-            android:name=".SurveyActivity"
+            android:name="com.example.survey.SurveyActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name="com.example.survey.RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -8,4 +8,5 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="cancel">Cancel</string>
     <string name="next_question">Next question</string>
+    <string name="finish_survey">Finish survey</string>
 </resources>
